@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>David Wahl Graduation Party</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>David Wahl Graduation Party</h1>
+      <p>Celebrating St. Mary Cathedral School • Future Notre Dame Engineer</p>
+      <p class="hero-details">
+        June 28, 2026 • 3:30-5:30 PM<br />
+        BJ's Catering and Event Center<br />
+        990 N Center Ave, Gaylord, MI 49735
+      </p>
+    </div>
+  </header>
 
+  <main class="container">
+    <section class="card">
+      <h2>Event details</h2>
+      <ul>
+        <li><strong>Location:</strong> Primarily indoors, lawn activities for kids</li>
+        <li><strong>Dress code:</strong> Casual</li>
+        <li><strong>Food:</strong> Italiano Pasta Bar (Alfredo & Marinara, grilled chicken, meatballs, Fettuccini & Spaghetti, Caesar salad, garlic breadsticks)</li>
+        <li><strong>Drinks:</strong> Lemonade, water, coffee</li>
+        <li><strong>Parking:</strong> On-site</li>
+        <li><strong>Kids:</strong> Welcome!</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>RSVP</h2>
+      <form id="rsvp-form">
+        <label>
+          Party name
+          <input type="text" name="partyName" required />
+        </label>
+        <label>
+          Number of guests
+          <input type="number" name="guestCount" min="0" required />
+        </label>
+        <button type="submit">Submit RSVP</button>
+        <p id="rsvp-status" class="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>More info coming soon</h2>
+      <p>Check back here for updates about activities, schedule, and any last-minute details.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
