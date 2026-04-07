@@ -854,7 +854,7 @@ Keep answers concise, warm, and celebratory. If you don't know something specifi
       const typingId = showTyping();
 
       try {
-        const response = await fetch('party-assistant.dww082007.workers.dev', {
+        const response = await fetch('https://party-assistant.dww082007.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -874,43 +874,6 @@ Keep answers concise, warm, and celebratory. If you don't know something specifi
         appendMessage('bot', "Sorry, I'm having a little trouble right now. Please try again in a moment!");
       }
     
-      btn.disabled = false;
-      input.focus();
-    }
-
-      appendMessage('user', text);
-      input.value = '';
-
-      chatHistory.push({ role: 'user', content: text });
-
-      const btn = document.getElementById('chat-send-btn');
-      btn.disabled = true;
-
-      const typingId = showTyping();
-
-      try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 1000,
-            system: SYSTEM_PROMPT,
-            messages: chatHistory
-          })
-        });
-
-        const data = await response.json();
-        removeTyping(typingId);
-
-        const reply = data.content?.[0]?.text || "I'm sorry, I didn't catch that. Try asking again!";
-        chatHistory.push({ role: 'assistant', content: reply });
-        appendMessage('bot', reply);
-      } catch (err) {
-        removeTyping(typingId);
-        appendMessage('bot', "Sorry, I'm having a little trouble right now. Please try again in a moment!");
-      }
-
       btn.disabled = false;
       input.focus();
     }
